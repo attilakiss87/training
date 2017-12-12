@@ -1,5 +1,6 @@
 package hu.helixlab;
 
+import java.text.DecimalFormat;
 import java.util.Random;
 
 public class MatrixWrapper implements Printable {
@@ -17,9 +18,10 @@ public class MatrixWrapper implements Printable {
 	@Override
 	public void print() {
 		if (this.matrix != null) {
+			DecimalFormat df = new DecimalFormat("0000000000");
 			for (int i = 0; i < matrix.length; i++) {
 				for (int cell : matrix[i]) {
-					System.out.print(cell + "\t");
+					System.out.print(df.format(cell) + "\t");
 				}
 				System.out.println();
 			}

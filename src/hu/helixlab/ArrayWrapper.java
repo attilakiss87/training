@@ -1,5 +1,6 @@
 package hu.helixlab;
 
+import java.text.DecimalFormat;
 import java.util.Random;
 
 public class ArrayWrapper implements Printable {
@@ -16,8 +17,12 @@ public class ArrayWrapper implements Printable {
 
 	@Override
 	public void print() {
-		for (int cell : array) {
-			System.out.print(cell + "\t");
+		DecimalFormat df = new DecimalFormat("0000000000");
+		for (int i = 0; i < array.length; i++) {
+			System.out.print(df.format(array[i]) + "\t");
+			if (i > 0 && i % 20 == 0) {
+				System.out.println();
+			}
 		}
 		System.out.println();
 		
